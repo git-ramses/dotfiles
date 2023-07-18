@@ -1,3 +1,3 @@
 -- themes
 
-vim.cmd[[colorscheme catppuccin-frappe]]
+vim.cmd[[colorscheme doom-dark+]]
