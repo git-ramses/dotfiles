@@ -37,6 +37,7 @@ return require('packer').startup(function(use)
       require("trouble").setup {}
     end
   }
+  use { 'neoclide/coc.nvim', branch = 'release' }
 
   -- file tree
   use {
