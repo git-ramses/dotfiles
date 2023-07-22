@@ -1,5 +1,8 @@
 local wk = require("which-key")
+vim.o.timeout = true
+vim.o.timeoutlen = 300
 
+-- leader maps
 wk.register({
   b = {
     name = "+buffer",
@@ -44,7 +47,7 @@ wk.register({
     n = { "<cmd>NextColorScheme<cr>", "Next theme" },
     p = { "<cmd>PrevColorScheme<cr>", "Previous theme" },
     r = { "<cmd>RandomColorScheme<cr>", "Random theme" },
-    i = { "<cmd>colorscheme doom-dark+<cr>", "Reset theme" },
+    i = { "<cmd>colorscheme doom-dark+<cr>", "Reset theme" }, -- should make dynamic to pull from set colorscheme instead of hardcoding it.
   },
   l = {
     name = "+lsp",
@@ -58,6 +61,28 @@ wk.register({
     q = { "Quit a window" },
     w = { "Switch windows" },
     s = { "Split window" },
-    v = { "Vertical split window" }
-  }
+    v = { "Vertical split window" },
+    t = { "Open terminal in split window" }
+  },
 }, { prefix = "<leader>"})
+
+-- local leader maps
+wk.register({
+  r = {
+    name = "+ruby/rails",
+    r = { "Run any rails command" },
+    g = {
+      name = "+generators",
+      c = { "controller" },
+      m = { "migration" },
+    },
+    n = {
+      name = "+navigation",
+      c = {"Go to controller"},
+      m = {"Go to model"},
+      f = {"Go to related"},
+      t = {"Go to alternate"},
+    }
+  },
+  f = { "Insert frozen string literal" }
+}, { prefix = "<localleader>" })

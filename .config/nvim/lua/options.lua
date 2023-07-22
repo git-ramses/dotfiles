@@ -6,23 +6,24 @@ local opt = vim.opt
 -- disable netrw for nvim-tree
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
 -- remap leader and local leader to <Space>
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = ","
 api.nvim_set_keymap("", "<Space>", "<Nop>", { noremap = true, silent = true})
 
-opt.termguicolors  = true          -- enable colors in terminal
-opt.hlsearch       = true          -- set highlight on search
-opt.number         = true          -- enables line numbers
-opt.relativenumber = true          -- enables relative line numbers
-opt.mouse          = "a"           -- enables mouse mode
-opt.breakindent    = true          -- enables break indent
-opt.undofile       = true          -- save undo history
-opt.ignorecase     = true          -- case insensitive searching unless /C or capital in search
-opt.smartcase      = true          -- smart case
-opt.updatetime     = 250           -- decreate update time
-opt.signcolumn     = "yes"         -- always show sign column
-opt.clipboard      = "unnamedplus" -- access system clipboard
+opt.termguicolors  = true
+opt.hlsearch       = true
+opt.number         = true
+opt.relativenumber = true
+opt.mouse          = "a"
+opt.breakindent    = true
+opt.undofile       = true
+opt.ignorecase     = true
+opt.smartcase      = true
+opt.updatetime     = 250
+opt.signcolumn     = "yes"
+opt.clipboard      = "unnamedplus"
 opt.showtabline    = 2
 opt.smarttab       = true
 opt.smartindent    = true
@@ -53,13 +54,3 @@ vim.cmd[[
     autocmd TextYankPost * silent! lua vim.highlight.on_yank()
   augroup end
 ]]
-
--- load plugin specific config
-require('nvim-autopairs').setup{}
-require("plugins.nvimtree")
-require("plugins.whichkey")
-require("plugins.gitsigns")
-require("plugins.nvimtest")
-require("plugins.lsp")
-require("plugins.lualine")
-require("plugins.coc")

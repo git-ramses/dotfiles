@@ -1,7 +1,7 @@
 require('nvim-test').setup {
   run = true,                 -- run tests (using for debug)
   commands_create = true,     -- create commands (TestFile, TestLast, ...)
-  filename_modifier = ":.",   -- modify filenames before tests run(:h filename-modifiers)
+  filename_modifier = ":p:~", -- modify filenames before tests run(:h filename-modifiers)
   silent = false,             -- less notifications
   term = "terminal",          -- a terminal to run ("terminal"|"toggleterm")
   termOpts = {
@@ -18,11 +18,11 @@ require('nvim-test').setup {
 }
 
 require('nvim-test.runners.jest'):setup {
-  command = "bundle exec rspec",                    -- run the test runner
+  command = "rspec",                                -- run the test runner
   args = { "-fd" },                                 -- default args
   env = {},                                         -- custom env vars
   file_pattern = "\\v(__spec__/*.|(spec))\\.(rb)$", -- determine whether a file is a testfile
   find_files = { "spec/{name}_spec.{ext}" },        -- find testfile for a file
-  filename_modifier = nil,                          -- modify filename before tests run (:h filename-modifiers)
+  filename_modifier = ':p:~',                          -- modify filename before tests run (:h filename-modifiers)
   working_directory = nil,                          -- set working directory (cwd by default)
 }
