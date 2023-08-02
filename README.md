@@ -64,6 +64,3 @@ If you want a LSP (language server protocol) setup in neovim so you can do cool 
 2023-07-18T16:28:11.911 INFO (pid:68162) [extension:coc-solargraph] - Solargraph is listening PORT=49449 PID=68206
 ...
 ```
-
-
-
