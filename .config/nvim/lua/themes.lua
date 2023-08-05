@@ -1,3 +1,3 @@
 -- themes
 
-vim.cmd[[colorscheme doom-dark+]]
+vim.cmd[[colorscheme rose-pine-moon]]
